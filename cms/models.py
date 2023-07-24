@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+class Content(models.Model):
+    git_repository = models.CharField(max_length=200)
+    file = models.CharField(max_length=50)
