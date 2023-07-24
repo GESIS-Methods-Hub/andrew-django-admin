@@ -1,0 +1,5 @@
+.editorconfig
+.git/*
+.gitignore
+Dockerfile
+db.sqlite3
