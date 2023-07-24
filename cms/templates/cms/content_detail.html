@@ -1,0 +1,22 @@
+<table>
+    <tr>
+        <th>Git git_repository:</th>
+        <td>{{ object.git_repository }}</td>
+    </tr>
+    <tr>
+        <th>File:</th>
+        <td>{{ object.file }}</td>
+    </tr>
+    <tr>
+        <th>Collection(s):</th>
+        <td>
+            <ul>
+                {% for collection in  object.collection.all %}
+                <li>
+                    {{ collection }}
+                </li>
+                {% endfor %}
+            </ul>
+        </td>
+    </tr>
+</table>
