@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Collection(models.Model):
-    parent_collection = models.ForeignKey("self", null=True, on_delete=models.SET_NULL)
+    parent_collection = models.ForeignKey("self", null=True,  blank=True, on_delete=models.SET_NULL)
     title = models.CharField(max_length=200, primary_key=True)
     abstract = models.TextField()
 
