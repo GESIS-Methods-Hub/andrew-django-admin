@@ -6,11 +6,16 @@ class Collection(models.Model):
     title = models.CharField(max_length=200, primary_key=True)
     abstract = models.TextField()
 
+    def __str__(self):
+        return self.title
 
 class Content(models.Model):
     git_repository = models.CharField(max_length=200)
     file = models.CharField(max_length=50)
     collection = models.ManyToManyField(Collection)
+
+    def __str__(self):
+        return f"{self.git_repository} + {self.file}"
 
     class Meta:
         unique_together = (
