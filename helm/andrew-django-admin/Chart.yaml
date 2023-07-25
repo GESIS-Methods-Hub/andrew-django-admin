@@ -1,6 +1,9 @@
 apiVersion: v2
 name: andrew-django-admin
 description: Admin interface for `andrew` powered by Django
+maintainers:
+- email: Raniere.CostadaSilva@gesis.org
+  name: Raniere Silva
 
 # A chart can be either an 'application' or a 'library' chart.
 #
