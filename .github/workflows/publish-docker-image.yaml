@@ -1,9 +1,11 @@
 name: Publish Docker image
 
 on:
-  release:
+  workflow_run:
+    workflows:
+      - Release Charts
     types:
-      - released
+      - completed
 
 jobs:
   push_to_registry:
