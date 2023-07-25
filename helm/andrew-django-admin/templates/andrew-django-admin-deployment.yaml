@@ -1,21 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: {{ .Release.Name }}-{{ .Chart.Name }}-deployment
-  labels:
-    app: {{ .Chart.Name }}
+  name: {{ .Release.Name }}-service
 spec:
-  replicas: 2
   selector:
-    matchLabels:
-      app: {{ .Chart.Name }}
-  template:
-    metadata:
-      labels:
-        app: {{ .Chart.Name }}
-    spec:
-      containers:
-        - name: {{ .Chart.Name }}
-          image: '{{ .Chart.Name }}:{{ .Chart.Version }}'
-          ports:
-            - containerPort: 8080
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  type: ClusterIP
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 8080
