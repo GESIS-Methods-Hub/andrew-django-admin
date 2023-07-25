@@ -22,6 +22,6 @@ jobs:
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.5.0
         env:
-          CR_TOKEN: "${{ secrets.HELM_CHART }}"
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
           charts_dir: helm/andrew-django-admin
