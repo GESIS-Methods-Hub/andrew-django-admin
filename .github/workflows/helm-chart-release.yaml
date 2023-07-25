@@ -24,4 +24,4 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
-          charts_dir: helm/andrew-django-admin
+          charts_dir: helm
