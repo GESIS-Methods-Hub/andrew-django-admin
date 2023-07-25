@@ -25,4 +25,3 @@ jobs:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         with:
           charts_dir: helm/andrew-django-admin
-          mark_as_latest: false
