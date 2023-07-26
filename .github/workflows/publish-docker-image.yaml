@@ -16,7 +16,8 @@ jobs:
       - 
         name: Check out the repo
         uses: actions/checkout@v3
-
+        with:
+          fetch-depth: 0
       -
         name: Get lastest tag
         id: tag_info
@@ -47,5 +48,5 @@ jobs:
           target: prod
           tags: |
             gesiscss/andrew-django-admin:latest
-            gesiscss/andrew-django-admin:latest:${{ steps.tag_info.outputs.VERSION }}"
+            gesiscss/andrew-django-admin:${{ steps.tag_info.outputs.VERSION }}"
 
