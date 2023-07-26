@@ -21,3 +21,15 @@ micromamba create -n andrew-django-admin -f env.yaml
 ```{bash}
 micromamba activate andrew-django-admin
 ```
+
+### How to run the app in the developmen environment?
+
+```{bash}
+python manage.py migrate && python manage.py runserver
+```
+
+### How to create create a new migration after change the database model?
+
+```{bash}
+python manage.py makemigrations
+```
