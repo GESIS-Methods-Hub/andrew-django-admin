@@ -1,9 +1,11 @@
 name: Publish Docker image
 
 on:
-  push:
-    tags:
-      - '*'
+  workflow_run:
+    workflows:
+      - Release Charts
+    types:
+      - completed
 
 jobs:
   push_to_registry:
@@ -20,12 +22,14 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
+          context: git
           # list of Docker images to use as base name for tags
           images: |
             gesiscss/andrew-django-admin
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=ref,event=tag
+            type=edge
+            type=match,pattern=andrew-django-admin-(.*),group=1
 
       -
         name: Set up QEMU
