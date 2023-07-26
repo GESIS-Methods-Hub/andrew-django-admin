@@ -1,11 +1,9 @@
 name: Publish Docker image
 
 on:
-  workflow_run:
-    workflows:
-      - Release Charts
-    types:
-      - completed
+  push:
+    tags:
+      - v*
 
 jobs:
   push_to_registry:
@@ -27,7 +25,7 @@ jobs:
             gesiscss/andrew-django-admin
           # generate Docker tags based on the following events/attributes
           tags: |
-            type=match,pattern=andrew-django-admin-(.*),group=1
+            type=ref,event=tag
 
       -
         name: Set up QEMU
