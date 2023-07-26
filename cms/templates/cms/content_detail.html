@@ -1,11 +1,19 @@
 <table>
     <tr>
-        <th>Git git_repository:</th>
+        <th>Enable:</th>
+        <td>{{ object.enable }}</td>
+    </tr>
+    <tr>
+        <th>Git repository:</th>
         <td>{{ object.git_repository }}</td>
     </tr>
     <tr>
         <th>File:</th>
         <td>{{ object.file }}</td>
+    </tr>
+    <tr>
+        <th>Type:</th>
+        <td>{{ object.get_group_display }}</td>
     </tr>
     <tr>
         <th>Collection(s):</th>
