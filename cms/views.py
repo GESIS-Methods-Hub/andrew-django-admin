@@ -1,4 +1,5 @@
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 from django.shortcuts import render, redirect
 
 from .forms import ContentForm
@@ -11,6 +12,12 @@ class CollectionDetailView(DetailView):
 
 class ContentDetailView(DetailView):
     model = Content
+
+
+class ContentListView(ListView):
+    model = Content
+    template_name = "cms/content.csv"
+    content_type = "text/csv"
 
 
 def add_content(request):

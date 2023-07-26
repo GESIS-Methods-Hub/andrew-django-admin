@@ -1,0 +1,3 @@
+link,filename,group
+{% for content in object_list %}{{ content.git_repository }},{{ content.filename }},{{ content.get_group_display }}
+{% endfor %}
