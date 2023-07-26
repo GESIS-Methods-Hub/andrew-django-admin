@@ -48,5 +48,5 @@ jobs:
           target: prod
           tags: |
             gesiscss/andrew-django-admin:latest
-            gesiscss/andrew-django-admin:${{ steps.tag_info.outputs.VERSION }}"
+            gesiscss/andrew-django-admin:${{ steps.tag_info.outputs.VERSION }}
 
