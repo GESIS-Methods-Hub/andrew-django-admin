@@ -22,6 +22,12 @@ micromamba create -n andrew-django-admin -f env.yaml
 micromamba activate andrew-django-admin
 ```
 
+### How to load the demo database?
+
+```{bash}
+python manage.py loaddata demo/db.json
+```
+
 ### How to run the app in the developmen environment?
 
 ```{bash}
@@ -32,4 +38,10 @@ python manage.py migrate && python manage.py runserver
 
 ```{bash}
 python manage.py makemigrations
+```
+
+### How to update the demo database?
+
+```{bash}
+python manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
 ```
