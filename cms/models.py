@@ -15,6 +15,9 @@ class Collection(models.Model):
         max_length=200, null=True, blank=True, verbose_name="Subtitle"
     )
     abstract = models.TextField(verbose_name="Abstract")
+    cover_image = models.FileField(
+        upload_to="cover_image/", null=True, blank=True, verbose_name="Cover image"
+    )
 
     def __str__(self):
         return self.title
