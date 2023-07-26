@@ -11,6 +11,9 @@ class Collection(models.Model):
         verbose_name="Parent collection",
     )
     title = models.CharField(max_length=200, primary_key=True, verbose_name="Title")
+    subtitle = models.CharField(
+        max_length=200, null=True, blank=True, verbose_name="Subtitle"
+    )
     abstract = models.TextField(verbose_name="Abstract")
 
     def __str__(self):
