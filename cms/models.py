@@ -35,6 +35,8 @@ class Content(models.Model):
         max_length=1, choices=GROUP_CHOICES, default=TUTORIAL_GROUP, verbose_name="Type"
     )
 
+    enable = models.BooleanField(default=True, verbose_name="Enable")
+
     def __str__(self):
         return f"{self.git_repository} + {self.file}"
 
