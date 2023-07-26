@@ -21,6 +21,18 @@ class Content(models.Model):
     file = models.CharField(max_length=50)
     collection = models.ManyToManyField(Collection)
 
+    PACKAGE_GROUP = "P"
+    TUTORIAL_GROUP = "T"
+    GROUP_CHOICES = [
+        (PACKAGE_GROUP, "Package"),
+        (TUTORIAL_GROUP, "Tutorial"),
+    ]
+    group = models.CharField(
+        max_length=1,
+        choices=GROUP_CHOICES,
+        default=TUTORIAL_GROUP,
+    )
+
     def __str__(self):
         return f"{self.git_repository} + {self.file}"
 
