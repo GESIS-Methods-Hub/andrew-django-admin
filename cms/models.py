@@ -23,7 +23,7 @@ class Collection(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("show_collection", kwargs={"collection_id": self.pk})
+        return reverse("show_collection", kwargs={"pk": self.pk})
 
 
 class Content(models.Model):
@@ -47,7 +47,7 @@ class Content(models.Model):
         return f"{self.git_repository} + {self.file}"
 
     def get_absolute_url(self):
-        return reverse("show_content", kwargs={"content_id": self.pk})
+        return reverse("show_content", kwargs={"pk": self.pk})
 
     class Meta:
         unique_together = (
