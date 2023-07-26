@@ -4,8 +4,10 @@ from django.shortcuts import render, redirect
 from .forms import ContentForm
 from .models import Content, Collection
 
+
 class CollectionDetailView(DetailView):
     model = Collection
+
 
 class ContentDetailView(DetailView):
     model = Content

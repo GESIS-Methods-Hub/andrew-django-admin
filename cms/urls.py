@@ -6,6 +6,8 @@ urlpatterns = [
     path("", views.add_content, name="add_content"),
     path("content/<int:pk>/", views.ContentDetailView.as_view(), name="show_content"),
     path(
-        "collection/<int:pk>/", views.CollectionDetailView.as_view(), name="show_collection"
+        "collection/<int:pk>/",
+        views.CollectionDetailView.as_view(),
+        name="show_collection",
     ),
 ]

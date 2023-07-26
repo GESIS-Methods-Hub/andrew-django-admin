@@ -4,15 +4,16 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('cms', '0003_alter_collection_parent_collection'),
+        ("cms", "0003_alter_collection_parent_collection"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='content',
-            name='group',
-            field=models.CharField(choices=[('P', 'Package'), ('T', 'Tutorial')], default='T', max_length=1),
+            model_name="content",
+            name="group",
+            field=models.CharField(
+                choices=[("P", "Package"), ("T", "Tutorial")], default="T", max_length=1
+            ),
         ),
     ]
