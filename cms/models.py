@@ -14,7 +14,7 @@ class Collection(models.Model):
     subtitle = models.CharField(
         max_length=200, null=True, blank=True, verbose_name="Subtitle"
     )
-    abstract = models.TextField(verbose_name="Abstract")
+    abstract = models.TextField(null=True, blank=True, verbose_name="Abstract")
     cover_image = models.FileField(
         upload_to="cover_image/", null=True, blank=True, verbose_name="Cover image"
     )
