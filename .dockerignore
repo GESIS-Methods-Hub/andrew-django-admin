@@ -2,5 +2,6 @@
 .git/*
 .gitignore
 db.sqlite3
+demo/*
 Dockerfile
 helm/*
