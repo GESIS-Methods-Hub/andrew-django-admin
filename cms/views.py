@@ -23,6 +23,15 @@ class ContentListView(ListView):
     template_name = "cms/content.csv"
     content_type = "text/csv"
 
+class CollectionMapListView(ListView):
+    model = Collection
+    template_name = "cms/collection-map.csv"
+    content_type = "text/csv"
+
+    def get_queryset(self, *args, **kwargs):
+        qs = super(CollectionMapListView, self).get_queryset(*args, **kwargs)
+        qs = qs.prefetch_related('content_set')
+        return qs
 
 def add_content(request):
     if request.method == "POST":

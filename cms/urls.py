@@ -12,4 +12,5 @@ urlpatterns = [
         views.CollectionDetailView.as_view(),
         name="show_collection",
     ),
+    path("collection/map/", views.CollectionMapListView.as_view(), name="get_navigation_map"),
 ]
