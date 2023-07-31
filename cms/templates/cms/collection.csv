@@ -1,0 +1,3 @@
+parent_collection,title,subtitle,abstract,cover_image
+{% for content in object_list %}{{ content.parent_collection }},{{ content.title }},{{ content.subtitle }},{{ content.abstract }},{{ content.cover_image }}
+{% endfor %}

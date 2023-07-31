@@ -9,6 +9,10 @@ from .models import Content, Collection
 class CollectionDetailView(DetailView):
     model = Collection
 
+class CollectionListView(ListView):
+    model = Collection
+    template_name = "cms/collection.csv"
+    content_type = "text/csv"
 
 class ContentDetailView(DetailView):
     model = Content
