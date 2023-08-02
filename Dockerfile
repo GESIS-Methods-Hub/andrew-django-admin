@@ -5,7 +5,9 @@ RUN DEBIAN_FRONTEND=noninteractive \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone \
     && apt-get update \
-    && apt-get install -y tzdata python3 python3-pip
+    && apt-get install -y tzdata python3 python3-pip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt requirements.txt
 
@@ -15,10 +17,13 @@ WORKDIR /var/andrew-django-admin
 
 FROM dev AS prod
 
-RUN apt install python3-dev libpq-dev nginx -y
+RUN apt install python3-dev libpq-dev nginx -y && \
+    python3 -m pip install gunicorn && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 ADD . /var/andrew-django-admin
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", ":8000", "--workers", "3", "djangokubernetesproject.wsgi"]
+CMD ["gunicorn", "--bind", ":8080", "/var/andrew-django-admin/andrew/wsgi.py"]
