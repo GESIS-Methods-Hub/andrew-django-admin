@@ -59,8 +59,21 @@ minikube start
 ```
 
 ```{bash}
-helm install \
-    --replace \
+helm upgrade \
     andrew-django-admin \
-    ./helm/andrew-django-admin
+    ./helm/andrew-django-admin \
+    --install \
+    --create-namespace \
+    --history-max 1
+```
+
+### How to get a shell from Kubernetes pod?
+
+```{bash}
+kubectl \
+    exec \
+    --stdin \
+    --tty \
+    pod_name \
+    -- /bin/bash
 ```
