@@ -17,7 +17,8 @@ WORKDIR /var/andrew-django-admin
 
 FROM dev AS prod
 
-RUN apt install python3-dev libpq-dev nginx -y && \
+RUN apt-get update && \
+    apt install python3-dev libpq-dev nginx -y && \
     python3 -m pip install gunicorn && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
