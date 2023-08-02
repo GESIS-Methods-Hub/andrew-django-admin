@@ -46,8 +46,21 @@ python manage.py makemigrations
 python manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
 ```
 
-## How to render the Helm chart?
+### How to render the Helm chart?
 
 ```{bash}
 helm template render helm/andrew-django-admin/
+```
+
+### How to preview Helm chart in Minikube?
+
+```{bash}
+minikube start
+```
+
+```{bash}
+helm install \
+    --replace \
+    andrew-django-admin \
+    ./helm/andrew-django-admin
 ```
