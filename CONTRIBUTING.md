@@ -59,8 +59,10 @@ minikube start
 ```
 
 ```{bash}
-helm install \
-    --replace \
+helm upgrade \
     andrew-django-admin \
-    ./helm/andrew-django-admin
+    ./helm/andrew-django-admin \
+    --install \
+    --create-namespace \
+    --history-max 1
 ```
