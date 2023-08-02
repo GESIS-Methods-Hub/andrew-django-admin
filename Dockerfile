@@ -27,4 +27,4 @@ ADD . /var/andrew-django-admin
 
 EXPOSE 8000
 
-CMD ["gunicorn", "--bind", ":8080", "/var/andrew-django-admin/andrew/wsgi.py"]
+CMD ["gunicorn", "--bind", ":8080", "andrew.wsgi"]
