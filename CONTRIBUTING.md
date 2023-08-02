@@ -45,3 +45,9 @@ python manage.py makemigrations
 ```{bash}
 python manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
 ```
+
+## How to render the Helm chart?
+
+```{bash}
+helm template render helm/andrew-django-admin/
+```
