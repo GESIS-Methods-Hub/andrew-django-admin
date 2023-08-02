@@ -66,3 +66,14 @@ helm upgrade \
     --create-namespace \
     --history-max 1
 ```
+
+### How to get a shell from Kubernetes pod?
+
+```{bash}
+kubectl \
+    exec \
+    --stdin \
+    --tty \
+    pod_name \
+    -- /bin/bash
+```
