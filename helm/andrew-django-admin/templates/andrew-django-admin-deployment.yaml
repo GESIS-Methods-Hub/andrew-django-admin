@@ -1,12 +1,21 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-service
+  name: {{ .Release.Name }}-{{ .Chart.Name }}-deployment
+  labels:
+    app: {{ .Chart.Name }}
 spec:
+  replicas: 1
   selector:
-    app.kubernetes.io/instance: {{ .Release.Name }}
-  type: ClusterIP
-  ports:
-    - protocol: "TCP"
-      port: 80
-      targetPort: 8080
+    matchLabels:
+      app: {{ .Chart.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Chart.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: 'gesiscss/{{ .Chart.Name }}:{{ .Chart.Version }}'
+          ports:
+            - containerPort: 8080
