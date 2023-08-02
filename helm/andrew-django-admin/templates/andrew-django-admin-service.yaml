@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: '{{ .Chart.Name }}:{{ .Chart.Version }}'
+          image: gesiscss/'{{ .Chart.Name }}:{{ .Chart.Version }}'
           ports:
             - containerPort: 8080
