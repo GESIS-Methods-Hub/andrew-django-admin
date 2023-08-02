@@ -27,4 +27,6 @@ ADD . /var/andrew-django-admin
 
 EXPOSE 8000
 
+ENTRYPOINT ["/var/andrew-django-admin/docker-entrypoint.sh"]
+
 CMD ["gunicorn", "--bind", ":8080", "andrew.wsgi"]
