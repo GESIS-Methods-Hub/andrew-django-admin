@@ -10,7 +10,26 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
+import logging
+
 from pathlib import Path
+
+logger = logging.getLogger(__name__)
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": os.getenv("DJANGO_LOG_LEVEL", "WARNING"),
+    },
+}
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +46,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+if 'ANDREW_HOST_NAME' in os.environ:
+    ALLOWED_HOSTS.append(os.environ['ANDREW_HOST_NAME'])
+else:
+    logger.warning("ALLOWED_HOSTS is empty!")
 
 # Application definition
 
