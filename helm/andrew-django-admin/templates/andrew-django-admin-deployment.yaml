@@ -14,6 +14,10 @@ spec:
       labels:
         app: {{ .Chart.Name }}
     spec:
+      initContainers:
+        - name: check-for-postgres
+          image: busybox:1.28
+          command: ['sh', '-c', "until nslookup ${ANDREW_DJANGO_ADMIN_POSTGRES_SERVICE_HOST}; do echo waiting for postgres; sleep 2; done"]
       containers:
         - name: {{ .Chart.Name }}
           image: gesiscss/{{ .Chart.Name }}:{{ .Chart.Version }}
