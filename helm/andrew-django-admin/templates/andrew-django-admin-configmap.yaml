@@ -3,5 +3,6 @@ kind: ConfigMap
 metadata:
   name: {{ .Chart.Name }}-configmap
 data:
-  ALLOWED_HOSTS: "{{ .Values.host | quote }}"
-  DJANGO_LOG_LEVEL: "{{ .Values.log_level | quote }}"
+  ALLOWED_HOSTS: {{ .Values.host | quote }}
+  DJANGO_DEBUG: {{ .Values.debug | quote }}
+  DJANGO_LOG_LEVEL: {{ .Values.log_level | quote }}
