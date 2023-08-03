@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-{{ .Chart.Name }}-deployment
+  name: {{ .Chart.Name }}-deployment
   labels:
     app: {{ .Chart.Name }}
 spec:
@@ -75,3 +75,10 @@ spec:
                 secretKeyRef:
                   name: {{ .Chart.Name }}-postgres
                   key: db
+          volumeMounts:
+            - mountPath: "/var/lib/postgresql/data"
+              name: {{ .Chart.Name }}-postgres-pv-storage
+      volumes:
+        - name: {{ .Chart.Name }}-postgres-pv-storage
+          persistentVolumeClaim:
+            claimName: {{ .Chart.Name }}-postgres-pv-claim

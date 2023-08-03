@@ -55,6 +55,10 @@ helm template render helm/andrew-django-admin/
 ### How to preview Helm chart in Minikube?
 
 ```{bash}
+sudo mkdir -p /mnt/andrew-django-admin/postgres
+```
+
+```{bash}
 minikube start
 ```
 
