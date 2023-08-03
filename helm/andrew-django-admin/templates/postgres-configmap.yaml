@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-postgres-configmap
+binaryData:
+  postgresql.conf: |-
+    {{ .Files.Get "postgres/postgresql.conf" | b64enc }}
+  pg_hba.conf: |-
+    {{ .Files.Get "postgres/pg_hba.conf" | b64enc }}
