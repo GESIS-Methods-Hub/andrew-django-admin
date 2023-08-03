@@ -77,24 +77,8 @@ kubectl \
     secret \
     generic \
     andrew-django-admin-postgres \
-    --from-literal=password='123456'
-```
-
-```{bash}
-kubectl \
-    create \
-    secret \
-    generic \
-    andrew-django-admin-postgres \
-    --from-literal=user='andrew'
-```
-
-```{bash}
-kubectl \
-    create \
-    secret \
-    generic \
-    andrew-django-admin-postgres \
+    --from-literal=password='123456' \
+    --from-literal=user='andrew' \
     --from-literal=db='andrew'
 ```
 
