@@ -24,11 +24,11 @@ spec:
           ports:
             - containerPort: 8080
           env:
-            - name: ALLOWED_HOSTS
+            - name: ANDREW_HOST_NAME
               valueFrom:
                 configMapKeyRef:
                   name: {{ .Chart.Name }}-configmap
-                  key: ALLOWED_HOSTS
+                  key: ANDREW_HOST_NAME
             - name: DJANGO_DEBUG
               valueFrom:
                 configMapKeyRef:
