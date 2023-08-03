@@ -5,3 +5,5 @@ metadata:
 binaryData:
   postgresql.conf: |-
     {{ .Files.Get "postgres/postgresql.conf" | b64enc }}
+  pg_hba.conf: |-
+    {{ .Files.Get "postgres/pg_hba.conf" | b64enc }}

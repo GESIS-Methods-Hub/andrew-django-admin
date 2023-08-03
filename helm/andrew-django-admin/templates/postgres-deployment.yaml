@@ -19,6 +19,8 @@ spec:
           image: postgres:15.3-bookworm
           ports:
             - containerPort: 5432
+          command: ["docker-entrypoint.sh"]
+          args: ["-c", "config_file=/etc/postgresql/postgresql.conf", "-c", "hba_file=/etc/postgresql/pg_hba.conf"]
           env:
             - name: POSTGRES_PASSWORD
               valueFrom:
