@@ -55,30 +55,3 @@ spec:
                 secretKeyRef:
                   name: {{ .Chart.Name }}-postgres
                   key: db
-        - name: {{ .Chart.Name }}-postgres
-          image: postgres:15.3-bookworm
-          ports:
-            - containerPort: 5432
-          env:
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: {{ .Chart.Name }}-postgres
-                  key: password
-            - name: POSTGRES_USER
-              valueFrom:
-                secretKeyRef:
-                  name: {{ .Chart.Name }}-postgres
-                  key: user
-            - name: POSTGRES_DB
-              valueFrom:
-                secretKeyRef:
-                  name: {{ .Chart.Name }}-postgres
-                  key: db
-          volumeMounts:
-            - mountPath: "/var/lib/postgresql/data"
-              name: {{ .Chart.Name }}-postgres-pv-storage
-      volumes:
-        - name: {{ .Chart.Name }}-postgres-pv-storage
-          persistentVolumeClaim:
-            claimName: {{ .Chart.Name }}-postgres-pv-claim
