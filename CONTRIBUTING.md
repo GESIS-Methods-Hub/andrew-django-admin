@@ -55,6 +55,10 @@ helm template render helm/andrew-django-admin/
 ### How to preview Helm chart in Minikube?
 
 ```{bash}
+sudo mkdir -p /mnt/andrew-django-admin/postgres
+```
+
+```{bash}
 minikube start
 ```
 
@@ -65,6 +69,17 @@ kubectl \
     generic \
     andrew-django-admin \
     --from-literal=django_secret_key='django-insecure-7mpt%30s!5bye-ve4n4m6v7e6$1t24%v8)(##w5phnn75hiy06'
+```
+
+```{bash}
+kubectl \
+    create \
+    secret \
+    generic \
+    andrew-django-admin-postgres \
+    --from-literal=password='123456' \
+    --from-literal=user='andrew' \
+    --from-literal=db='andrew'
 ```
 
 ```{bash}

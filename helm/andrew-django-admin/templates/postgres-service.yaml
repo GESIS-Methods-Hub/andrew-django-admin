@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Chart.Name }}-postgres
 spec:
   selector:
     app.kubernetes.io/instance: {{ .Chart.Name }}
   type: NodePort
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
-      nodePort: 30300
+      port: 5432
+      targetPort: 5432
