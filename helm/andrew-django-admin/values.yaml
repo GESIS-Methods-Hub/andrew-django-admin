@@ -1,0 +1,3 @@
+debug: true
+host: "*"
+log_level: "WARNING"
