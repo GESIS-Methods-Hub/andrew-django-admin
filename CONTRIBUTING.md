@@ -68,6 +68,33 @@ kubectl \
 ```
 
 ```{bash}
+kubectl \
+    create \
+    secret \
+    generic \
+    andrew-django-admin-postgres \
+    --from-literal=password='123456'
+```
+
+```{bash}
+kubectl \
+    create \
+    secret \
+    generic \
+    andrew-django-admin-postgres \
+    --from-literal=user='andrew'
+```
+
+```{bash}
+kubectl \
+    create \
+    secret \
+    generic \
+    andrew-django-admin-postgres \
+    --from-literal=db='andrew'
+```
+
+```{bash}
 helm upgrade \
     andrew-django-admin \
     ./helm/andrew-django-admin \
