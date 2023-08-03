@@ -1,2 +1,2 @@
-allowed_hosts: "*"
+host: "*"
 log_level: "WARNING"
