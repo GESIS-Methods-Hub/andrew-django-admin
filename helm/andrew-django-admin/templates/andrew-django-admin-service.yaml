@@ -7,7 +7,7 @@ spec:
     app.kubernetes.io/instance: {{ .Release.Name }}
   type: NodePort
   ports:
-    - protocol: "TCP"
+    - protocol: TCP
       port: 8080
       targetPort: 8080
       nodePort: 30300
