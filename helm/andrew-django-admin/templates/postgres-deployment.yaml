@@ -38,7 +38,13 @@ spec:
           volumeMounts:
             - mountPath: "/var/lib/postgresql/data"
               name: {{ .Chart.Name }}-postgres-pv-storage
+            - name: {{ .Chart.Name }}-postgres-config
+              mountPath: "/etc/postgresql"
+              readOnly: true
       volumes:
         - name: {{ .Chart.Name }}-postgres-pv-storage
           persistentVolumeClaim:
             claimName: {{ .Chart.Name }}-postgres-pv-claim
+        - name: {{ .Chart.Name }}-postgres-config
+          configMap:
+            name: {{ .Chart.Name }}-postgres-configmap
