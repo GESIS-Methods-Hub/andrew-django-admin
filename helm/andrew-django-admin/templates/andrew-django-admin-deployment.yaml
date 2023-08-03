@@ -16,6 +16,17 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: 'gesiscss/{{ .Chart.Name }}:{{ .Chart.Version }}'
+          image: gesiscss/{{ .Chart.Name }}:{{ .Chart.Version }}
           ports:
             - containerPort: 8080
+          env:
+            - name: ALLOWED_HOSTS
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Chart.Name }}-configmap
+                  key: ALLOWED_HOSTS
+            - name: DJANGO_LOG_LEVEL
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ .Chart.Name }}-configmap
+                  key: DJANGO_LOG_LEVEL
