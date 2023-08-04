@@ -1,3 +1,4 @@
 debug: true
 host: "*"
 log_level: "WARNING"
+host_static_files_dir: "/var/www/"

@@ -59,3 +59,10 @@ spec:
                 secretKeyRef:
                   name: {{ .Chart.Name }}-postgres
                   key: db
+          volumeMounts:
+            - mountPath: "/var/andrew-django-admin/static"
+              name: {{ .Chart.Name }}-pv-storage
+      volumes:
+        - name: {{ .Chart.Name }}-pv-storage
+          persistentVolumeClaim:
+            claimName: {{ .Chart.Name }}-pv-claim
