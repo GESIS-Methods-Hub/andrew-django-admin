@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: {{ .Chart.Name }}-postgres
   labels:
-    app: {{ .Chart.Name }}
+    app: {{ .Chart.Name }}-postgres
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Chart.Name }}
+      app: {{ .Chart.Name }}-postgres
   template:
     metadata:
       labels:
-        app: {{ .Chart.Name }}
+        app: {{ .Chart.Name }}-postgres
     spec:
       containers:
         - name: {{ .Chart.Name }}-postgres
