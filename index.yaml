@@ -2,6 +2,19 @@ apiVersion: v1
 entries:
   andrew-django-admin:
   - apiVersion: v2
+    appVersion: 0.2.6
+    created: "2023-08-04T09:23:07.798510158Z"
+    description: Admin interface for `andrew` powered by Django
+    digest: f19fe8d160449a2a9c65a2478ea39d2f12a3da9c199c233abd30bac158f7fe8f
+    maintainers:
+    - email: Raniere.CostadaSilva@gesis.org
+      name: Raniere Silva
+    name: andrew-django-admin
+    type: application
+    urls:
+    - https://github.com/GESIS-Methods-Hub/andrew-django-admin/releases/download/andrew-django-admin-0.2.6/andrew-django-admin-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v2
     appVersion: 0.2.5
     created: "2023-08-04T07:25:36.675553809Z"
     description: Admin interface for `andrew` powered by Django
@@ -287,4 +300,4 @@ entries:
     urls:
     - https://github.com/GESIS-Methods-Hub/andrew-django-admin/releases/download/andrew-django-admin-0.1.5/andrew-django-admin-0.1.5.tgz
     version: 0.1.5
-generated: "2023-08-04T07:25:36.675983279Z"
+generated: "2023-08-04T09:23:07.798640557Z"
