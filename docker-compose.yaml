@@ -1,0 +1,33 @@
+# Only for development
+
+services:
+  django:
+    depends_on:
+      - postgresql
+    build:
+      target: prod
+    environment:
+      ANDREW_HOST_NAME: localhost
+      DJANGO_DEBUG: false
+      DJANGO_SECRET_KEY: 123456
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: andrew
+      POSTGRES_DB: andrew
+      ANDREW_DJANGO_ADMIN_POSTGRES_SERVICE_HOST: andrew-django-admin-postgresql-1
+    volumes:
+      - type: bind
+        source: .
+        target: /var/andrew-django-admin
+      - type: bind
+        source: static
+        target: /var/andrew-django-admin/static
+    ports:
+      - 8080:8080
+  postgresql:
+    image: postgres:15.3-bookworm
+    environment:
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_USER: andrew
+      POSTGRES_DB: andrew
+    ports:
+      - 5432:5432
