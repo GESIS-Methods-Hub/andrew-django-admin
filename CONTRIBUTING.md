@@ -10,40 +10,30 @@ In the `CONTRIBUTING.md`, we use [`micromamba`](https://mamba.readthedocs.io/en/
 git clone git@github.com:GESIS-Methods-Hub/andrew-django-admin.git
 ```
 
-### How to create the development environment?
-
-```{bash}
-micromamba create -n andrew-django-admin -f env.yaml
-```
-
 ### How to load the development environment?
 
 ```{bash}
-micromamba activate andrew-django-admin
+docker compose up
 ```
 
 ### How to load the demo database?
 
-```{bash}
-python manage.py loaddata demo/db.json
-```
-
-### How to run the app in the developmen environment?
+With the development environment running, in another terminal, execute
 
 ```{bash}
-python manage.py migrate && python manage.py runserver
+docker compose exec django python3 manage.py loaddata demo/db.json
 ```
 
 ### How to create create a new migration after change the database model?
 
 ```{bash}
-python manage.py makemigrations
+docker compose exec django python3 manage.py makemigrations
 ```
 
 ### How to update the demo database?
 
 ```{bash}
-python manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
+docker compose exec django python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
 ```
 
 ### How to render the Helm chart?
