@@ -57,7 +57,6 @@ if 'ANDREW_HOST_NAME' in os.environ:
     host_name = os.environ['ANDREW_HOST_NAME']
     ALLOWED_HOSTS.append(host_name)
     CSRF_TRUSTED_ORIGINS.extend([
-        host_name,
         f'http://{host_name}',
         f'https://{host_name}',
     ])
