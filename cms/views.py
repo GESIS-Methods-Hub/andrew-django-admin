@@ -42,5 +42,6 @@ def add_content(request):
 
     else:
         form = ContentForm()
+        form.fields['collection'].queryset = Collection.objects.filter(parent_collection__isnull=False)
 
     return render(request, "cms/add_content.html", {"form": form})
