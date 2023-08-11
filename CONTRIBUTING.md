@@ -33,7 +33,12 @@ docker compose exec django python3 manage.py makemigrations
 ### How to update the demo database?
 
 ```{bash}
-docker compose exec django python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
+docker compose exec django python3 manage.py dumpdata \
+    --exclude admin \
+    --exclude auth \
+    --exclude contenttypes \
+    --exclude sessions \
+    | python3 -m json.tool > demo/db.json
 ```
 
 ### How to render the Helm chart?

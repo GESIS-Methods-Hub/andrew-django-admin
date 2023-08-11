@@ -10,7 +10,7 @@ class Collection(models.Model):
         on_delete=models.SET_NULL,
         verbose_name="Parent collection",
     )
-    title = models.CharField(max_length=200, primary_key=True, verbose_name="Title")
+    title = models.CharField(max_length=200, unique=True, verbose_name="Title")
     subtitle = models.CharField(
         max_length=200, null=True, blank=True, verbose_name="Subtitle"
     )
@@ -22,7 +22,7 @@ class Collection(models.Model):
     def __str__(self):
         if self.parent_collection is None:
             return self.title
-        
+
         return f"{self.parent_collection.__str__()}/{self.title}"
 
     def get_absolute_url(self):

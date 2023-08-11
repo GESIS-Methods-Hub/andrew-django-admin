@@ -11,11 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
-import logging
 
 from pathlib import Path
-
-logger = logging.getLogger(__name__)
 
 LOGGING = {
     "version": 1,
@@ -40,26 +37,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv(
     "DJANGO_SECRET_KEY",
-    "django-insecure-7mpt%30s!5bye-ve4n4m6v7e6$1t24%v8)(##w5phnn75hiy06"
+    "django-insecure-7mpt%30s!5bye-ve4n4m6v7e6$1t24%v8)(##w5phnn75hiy06",
 )
 
 # Environment variables are string!
 # More details at https://rusingh.com/all-been-there-boolean-environment-variables/
-DEBUG = os.getenv(
-    "DJANGO_DEBUG",
-    False
-) in ("True", "true", "T", "t", "1")
+DEBUG = os.getenv("DJANGO_DEBUG", False) in ("True", "true", "T", "t", "1")
 
 ALLOWED_HOSTS = []
 CSRF_TRUSTED_ORIGINS = []
 
-if 'ANDREW_HOST_NAME' in os.environ:
-    host_name = os.environ['ANDREW_HOST_NAME']
+if "ANDREW_HOST_NAME" in os.environ:
+    host_name = os.environ["ANDREW_HOST_NAME"]
     ALLOWED_HOSTS.append(host_name)
-    CSRF_TRUSTED_ORIGINS.extend([
-        f'http://{host_name}',
-        f'https://{host_name}',
-    ])
+    CSRF_TRUSTED_ORIGINS.extend(
+        [
+            f"http://{host_name}",
+            f"https://{host_name}",
+        ]
+    )
 else:
     logger.warning("ALLOWED_HOSTS is empty!")
 
@@ -72,6 +68,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
     "cms.apps.CmsConfig",
 ]
 
@@ -157,10 +154,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATIC_ROOT = os.getenv(
-    "STATIC_ROOT",
-    "/var/andrew-django-admin/static"
-)
+STATIC_ROOT = os.getenv("STATIC_ROOT", "/var/andrew-django-admin/static")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
