@@ -11,7 +11,7 @@ Helm Chart Repository: https://gesis-methods-hub.github.io/andrew-django-admin (
 - [X] Admin panel (`/admin`)
 - [X] Web form to add content (`/cms`)
 - [X] API endpoint to get **enabled** content (`/api/content`)
-- [X] API endpoint to get navigation tree (`/api/collection`)
+- [X] API endpoint to get navigation tree of **enabled** content (`/api/collection`)
 
 ## Development
 
