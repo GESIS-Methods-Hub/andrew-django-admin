@@ -1,3 +1,0 @@
-parent_collection,title,subtitle,abstract,cover_image
-{% for collection in object_list %}{{ collection.parent_collection }},{{ collection.title }},{{ collection.subtitle }},{{ collection.abstract }},{{ collection.cover_image }}
-{% endfor %}

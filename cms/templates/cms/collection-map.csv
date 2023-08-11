@@ -1,3 +1,0 @@
-parent_collection,title,subtitle,abstract,cover_image,collection
-{% for collection in object_list %}"{{ collection.parent_collection }}","{{ collection.title }}","{{ collection.subtitle }}","{{ collection.abstract }}","{{ collection.cover_image }}","{% for content in collection.content_set.all %}{{ content }}{% if forloop.last %}"{% endif %}
-{% endfor %}{% endfor %}

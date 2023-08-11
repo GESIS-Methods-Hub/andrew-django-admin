@@ -12,41 +12,24 @@ from .models import Content, Collection
 from .serializers import ContentSerializer, CollectionSerializer
 
 
+class ContentViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Content.objects.filter(enable=True)
+    serializer_class = ContentSerializer
+    permission_classes = [permissions.AllowAny]
+
 class CollectionViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Collection.objects.all()
     serializer_class = CollectionSerializer
     permission_classes = [permissions.AllowAny]
 
-
 class CollectionDetailView(DetailView):
     model = Collection
 
-
-class CollectionListView(ListView):
-    model = Collection
-    template_name = "cms/collection.csv"
-    content_type = "text/csv"
 
 
 class ContentDetailView(DetailView):
     model = Content
 
-
-class ContentListView(ListView):
-    model = Content
-    template_name = "cms/content.csv"
-    content_type = "text/csv"
-
-
-class CollectionMapListView(ListView):
-    model = Collection
-    template_name = "cms/collection-map.csv"
-    content_type = "text/csv"
-
-    def get_queryset(self, *args, **kwargs):
-        qs = super(CollectionMapListView, self).get_queryset(*args, **kwargs)
-        qs = qs.prefetch_related("content_set")
-        return qs
 
 
 def add_content(request):
@@ -63,25 +46,3 @@ def add_content(request):
         )
 
     return render(request, "cms/add_content.html", {"form": form})
-
-
-def get_all_content(request):
-    if request.META["HTTP_ACCEPT"] == "text/csv":
-        return ContentListView.as_view()(request)
-
-    content = list(
-        Content.objects.filter(enable=True).values("git_repository", "filename")
-    )
-    return JsonResponse(content, safe=False)
-
-
-def get_all_collection(request):
-    if request.META["HTTP_ACCEPT"] == "text/csv":
-        return ContentListView.as_view()(request)
-
-    library = []
-    for x in Collection.objects.all():
-        print(help(x))
-
-    collection = list(Collection.objects.values())
-    return JsonResponse(collection, safe=False)
