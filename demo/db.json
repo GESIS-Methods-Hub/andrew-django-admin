@@ -3,67 +3,8 @@
         "model": "cms.collection",
         "pk": 1,
         "fields": {
-            "parent_collection": "Fundamentals",
-            "subtitle": "Lorem ipsum",
-            "abstract": "Lorem ipsum dolor sit amet consectetur adipiscing elit, lectus venenatis porta tortor dui lacus pellentesque neque, nibh tristique ultricies conubia semper aliquam viverra, per facilisis curabitur tempus at etiam.",
-            "cover_image": "cover_image/browser-coding_kKjTXOo.svg"
-        }
-    },
-    {
-        "model": "cms.collection",
-        "pk": 2,
-        "fields": {
-            "parent_collection": "Data Gathering",
-            "subtitle": "Lorem ipsum",
-            "abstract": "Lorem ipsum dolor sit amet consectetur adipiscing elit, lectus venenatis porta tortor dui lacus pellentesque neque, nibh tristique ultricies conubia semper aliquam viverra, per facilisis curabitur tempus at etiam.",
-            "cover_image": "cover_image/click_njc3WjZ.svg"
-        }
-    },
-    {
-        "model": "cms.collection",
-        "pk": 3,
-        "fields": {
-            "parent_collection": "Data Visualization",
-            "subtitle": "Lorem ipsum",
-            "abstract": "Lorem ipsum dolor sit amet consectetur adipiscing elit, lectus venenatis porta tortor dui lacus pellentesque neque, nibh tristique ultricies conubia semper aliquam viverra, per facilisis curabitur tempus at etiam.",
-            "cover_image": "cover_image/pencil-draw_lXyNFR9.svg"
-        }
-    },
-    {
-        "model": "cms.collection",
-        "pk": 4,
-        "fields": {
-            "parent_collection": "Fundamentals",
-            "subtitle": "Lorem ipsum",
-            "abstract": "Lorem ipsum dolor sit amet consectetur adipiscing elit, lectus venenatis porta tortor dui lacus pellentesque neque, nibh tristique ultricies conubia semper aliquam viverra, per facilisis curabitur tempus at etiam.",
-            "cover_image": "cover_image/browser-coding_SEiqxmp.svg"
-        }
-    },
-    {
-        "model": "cms.collection",
-        "pk": 5,
-        "fields": {
             "parent_collection": null,
-            "subtitle": "Non essential workflows",
-            "abstract": "",
-            "cover_image": "cover_image/click.svg"
-        }
-    },
-    {
-        "model": "cms.collection",
-        "pk": 6,
-        "fields": {
-            "parent_collection": null,
-            "subtitle": "Visual representations of a large amount of complex data",
-            "abstract": "",
-            "cover_image": "cover_image/pencil-draw.svg"
-        }
-    },
-    {
-        "model": "cms.collection",
-        "pk": 7,
-        "fields": {
-            "parent_collection": null,
+            "title": "Fundamentals",
             "subtitle": "Introductions to R and Python",
             "abstract": "",
             "cover_image": "cover_image/browser-coding.svg"
@@ -71,22 +12,90 @@
     },
     {
         "model": "cms.collection",
-        "pk": 8,
+        "pk": 2,
         "fields": {
-            "parent_collection": "Data Visualization",
+            "parent_collection": 1,
+            "title": "Basic Setup",
             "subtitle": "Lorem ipsum",
             "abstract": "Lorem ipsum dolor sit amet consectetur adipiscing elit, lectus venenatis porta tortor dui lacus pellentesque neque, nibh tristique ultricies conubia semper aliquam viverra, per facilisis curabitur tempus at etiam.",
-            "cover_image": "cover_image/pencil-draw_vGfHuh9.svg"
+            "cover_image": "cover_image/browser-coding_kKjTXOo.svg"
+        }
+    },
+    {
+        "model": "cms.collection",
+        "pk": 3,
+        "fields": {
+            "parent_collection": 1,
+            "title": "Advanced Setup",
+            "subtitle": "Lorem ipsum",
+            "abstract": "Lorem ipsum dolor sit amet consectetur adipiscing elit, lectus venenatis porta tortor dui lacus pellentesque neque, nibh tristique ultricies conubia semper aliquam viverra, per facilisis curabitur tempus at etiam.",
+            "cover_image": "cover_image/browser-coding_SEiqxmp.svg"
+        }
+    },
+    {
+        "model": "cms.collection",
+        "pk": 4,
+        "fields": {
+            "parent_collection": null,
+            "title": "Data Gathering",
+            "subtitle": "Non essential workflows",
+            "abstract": "",
+            "cover_image": "cover_image/click.svg"
+        }
+    },
+    {
+        "model": "cms.collection",
+        "pk": 5,
+        "fields": {
+            "parent_collection": 4,
+            "title": "Web Scraping",
+            "subtitle": "Lorem ipsum",
+            "abstract": "Lorem ipsum dolor sit amet consectetur adipiscing elit, lectus venenatis porta tortor dui lacus pellentesque neque, nibh tristique ultricies conubia semper aliquam viverra, per facilisis curabitur tempus at etiam.",
+            "cover_image": "cover_image/click_njc3WjZ.svg"
+        }
+    },
+    {
+        "model": "cms.collection",
+        "pk": 6,
+        "fields": {
+            "parent_collection": 4,
+            "title": "APIs",
+            "subtitle": "Lorem ipsum",
+            "abstract": "Lorem ipsum dolor sit amet consectetur adipiscing elit, lectus venenatis porta tortor dui lacus pellentesque neque, nibh tristique ultricies conubia semper aliquam viverra, per facilisis curabitur tempus at etiam.",
+            "cover_image": "cover_image/click_M3aOs2V.svg"
+        }
+    },
+    {
+        "model": "cms.collection",
+        "pk": 7,
+        "fields": {
+            "parent_collection": null,
+            "title": "Data Visualization",
+            "subtitle": "Visual representations of a large amount of complex data",
+            "abstract": "",
+            "cover_image": "cover_image/pencil-draw.svg"
+        }
+    },
+    {
+        "model": "cms.collection",
+        "pk": 8,
+        "fields": {
+            "parent_collection": 7,
+            "title": "Basic Data Visualization",
+            "subtitle": "Lorem ipsum",
+            "abstract": "Lorem ipsum dolor sit amet consectetur adipiscing elit, lectus venenatis porta tortor dui lacus pellentesque neque, nibh tristique ultricies conubia semper aliquam viverra, per facilisis curabitur tempus at etiam.",
+            "cover_image": "cover_image/pencil-draw_lXyNFR9.svg"
         }
     },
     {
         "model": "cms.collection",
         "pk": 9,
         "fields": {
-            "parent_collection": "Data Gathering",
+            "parent_collection": 7,
+            "title": "Network Visualization",
             "subtitle": "Lorem ipsum",
             "abstract": "Lorem ipsum dolor sit amet consectetur adipiscing elit, lectus venenatis porta tortor dui lacus pellentesque neque, nibh tristique ultricies conubia semper aliquam viverra, per facilisis curabitur tempus at etiam.",
-            "cover_image": "cover_image/click_M3aOs2V.svg"
+            "cover_image": "cover_image/pencil-draw_vGfHuh9.svg"
         }
     },
     {
@@ -98,12 +107,12 @@
             "group": "T",
             "enable": true,
             "collection": [
-                "Basic Setup",
-                "Advanced Setup",
-                "Web Scraping",
-                "APIs",
-                "Basic Data Visualization",
-                "Network Visualization"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     },
@@ -116,12 +125,12 @@
             "group": "T",
             "enable": true,
             "collection": [
-                "Basic Setup",
-                "Advanced Setup",
-                "Web Scraping",
-                "APIs",
-                "Basic Data Visualization",
-                "Network Visualization"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     },
@@ -134,12 +143,12 @@
             "group": "T",
             "enable": true,
             "collection": [
-                "Basic Setup",
-                "Advanced Setup",
-                "Web Scraping",
-                "APIs",
-                "Basic Data Visualization",
-                "Network Visualization"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     },
@@ -152,12 +161,12 @@
             "group": "T",
             "enable": true,
             "collection": [
-                "Basic Setup",
-                "Advanced Setup",
-                "Web Scraping",
-                "APIs",
-                "Basic Data Visualization",
-                "Network Visualization"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     },
@@ -170,12 +179,12 @@
             "group": "T",
             "enable": true,
             "collection": [
-                "Basic Setup",
-                "Advanced Setup",
-                "Web Scraping",
-                "APIs",
-                "Basic Data Visualization",
-                "Network Visualization"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     },
@@ -188,12 +197,12 @@
             "group": "T",
             "enable": true,
             "collection": [
-                "Basic Setup",
-                "Advanced Setup",
-                "Web Scraping",
-                "APIs",
-                "Basic Data Visualization",
-                "Network Visualization"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     },
@@ -206,12 +215,12 @@
             "group": "T",
             "enable": true,
             "collection": [
-                "Basic Setup",
-                "Advanced Setup",
-                "Web Scraping",
-                "APIs",
-                "Basic Data Visualization",
-                "Network Visualization"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     },
@@ -224,12 +233,12 @@
             "group": "T",
             "enable": true,
             "collection": [
-                "Basic Setup",
-                "Advanced Setup",
-                "Web Scraping",
-                "APIs",
-                "Basic Data Visualization",
-                "Network Visualization"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     },
@@ -242,12 +251,12 @@
             "group": "T",
             "enable": true,
             "collection": [
-                "Basic Setup",
-                "Advanced Setup",
-                "Web Scraping",
-                "APIs",
-                "Basic Data Visualization",
-                "Network Visualization"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     },
@@ -260,12 +269,12 @@
             "group": "P",
             "enable": true,
             "collection": [
-                "Basic Setup",
-                "Advanced Setup",
-                "Web Scraping",
-                "APIs",
-                "Basic Data Visualization",
-                "Network Visualization"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     },
@@ -278,12 +287,12 @@
             "group": "T",
             "enable": true,
             "collection": [
-                "Web Scraping",
-                "Basic Data Visualization",
-                "Advanced Setup",
-                "Basic Setup",
-                "Network Visualization",
-                "APIs"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     },
@@ -296,12 +305,12 @@
             "group": "T",
             "enable": true,
             "collection": [
-                "Web Scraping",
-                "Basic Data Visualization",
-                "Advanced Setup",
-                "Basic Setup",
-                "Network Visualization",
-                "APIs"
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
             ]
         }
     }
