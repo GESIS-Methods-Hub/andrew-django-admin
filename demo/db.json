@@ -1,5 +1,23 @@
 [
     {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$JLkdMFkb5EesnIC3ehclCs$KL2PzIPBbWFiZ7qqqqEZX94dksH1RQHVwAJcPwkwfbg=",
+            "last_login": "2023-08-11T11:43:24.519Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2023-08-11T11:43:07.896Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
         "model": "cms.collection",
         "pk": 1,
         "fields": {
@@ -304,6 +322,24 @@
             "filename": "demo-guide.docx",
             "group": "T",
             "enable": true,
+            "collection": [
+                2,
+                3,
+                5,
+                6,
+                8,
+                9
+            ]
+        }
+    },
+    {
+        "model": "cms.content",
+        "pk": 13,
+        "fields": {
+            "git_repository": "https://github.com/GESIS-Methods-Hub/minimal-example-qmd-rstats-xml2.git",
+            "filename": "index.qmd",
+            "group": "T",
+            "enable": false,
             "collection": [
                 2,
                 3,
