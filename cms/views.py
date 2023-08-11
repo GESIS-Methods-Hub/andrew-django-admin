@@ -17,19 +17,19 @@ class ContentViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ContentSerializer
     permission_classes = [permissions.AllowAny]
 
+
 class CollectionViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Collection.objects.all()
     serializer_class = CollectionSerializer
     permission_classes = [permissions.AllowAny]
 
+
 class CollectionDetailView(DetailView):
     model = Collection
 
 
-
 class ContentDetailView(DetailView):
     model = Content
-
 
 
 def add_content(request):
