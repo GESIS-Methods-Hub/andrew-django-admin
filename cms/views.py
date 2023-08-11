@@ -3,8 +3,19 @@ from django.shortcuts import render, redirect
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 
+from rest_framework.decorators import api_view
+from rest_framework import viewsets
+from rest_framework import permissions
+
 from .forms import ContentForm
 from .models import Content, Collection
+from .serializers import ContentSerializer, CollectionSerializer
+
+
+class CollectionViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Collection.objects.all()
+    serializer_class = CollectionSerializer
+    permission_classes = [permissions.AllowAny]
 
 
 class CollectionDetailView(DetailView):
@@ -58,13 +69,19 @@ def get_all_content(request):
     if request.META["HTTP_ACCEPT"] == "text/csv":
         return ContentListView.as_view()(request)
 
-    content = list(Content.objects.filter(enable=True).values("git_repository", "filename"))
+    content = list(
+        Content.objects.filter(enable=True).values("git_repository", "filename")
+    )
     return JsonResponse(content, safe=False)
 
 
 def get_all_collection(request):
     if request.META["HTTP_ACCEPT"] == "text/csv":
         return ContentListView.as_view()(request)
+
+    library = []
+    for x in Collection.objects.all():
+        print(help(x))
 
     collection = list(Collection.objects.values())
     return JsonResponse(collection, safe=False)
