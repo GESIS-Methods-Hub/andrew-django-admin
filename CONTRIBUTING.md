@@ -38,7 +38,7 @@ docker compose exec django python3 manage.py dumpdata \
     --exclude auth \
     --exclude contenttypes \
     --exclude sessions \
-    | python3 -m json.tool > db.json
+    | python3 -m json.tool > demo/db.json
 ```
 
 ### How to render the Helm chart?
