@@ -1,7 +1,7 @@
 [
     {
         "model": "cms.collection",
-        "pk": "Advanced Setup",
+        "pk": 1,
         "fields": {
             "parent_collection": "Fundamentals",
             "subtitle": "Lorem ipsum",
@@ -11,7 +11,7 @@
     },
     {
         "model": "cms.collection",
-        "pk": "APIs",
+        "pk": 2,
         "fields": {
             "parent_collection": "Data Gathering",
             "subtitle": "Lorem ipsum",
@@ -21,7 +21,7 @@
     },
     {
         "model": "cms.collection",
-        "pk": "Basic Data Visualization",
+        "pk": 3,
         "fields": {
             "parent_collection": "Data Visualization",
             "subtitle": "Lorem ipsum",
@@ -31,7 +31,7 @@
     },
     {
         "model": "cms.collection",
-        "pk": "Basic Setup",
+        "pk": 4,
         "fields": {
             "parent_collection": "Fundamentals",
             "subtitle": "Lorem ipsum",
@@ -41,7 +41,7 @@
     },
     {
         "model": "cms.collection",
-        "pk": "Data Gathering",
+        "pk": 5,
         "fields": {
             "parent_collection": null,
             "subtitle": "Non essential workflows",
@@ -51,7 +51,7 @@
     },
     {
         "model": "cms.collection",
-        "pk": "Data Visualization",
+        "pk": 6,
         "fields": {
             "parent_collection": null,
             "subtitle": "Visual representations of a large amount of complex data",
@@ -61,7 +61,7 @@
     },
     {
         "model": "cms.collection",
-        "pk": "Fundamentals",
+        "pk": 7,
         "fields": {
             "parent_collection": null,
             "subtitle": "Introductions to R and Python",
@@ -71,7 +71,7 @@
     },
     {
         "model": "cms.collection",
-        "pk": "Network Visualization",
+        "pk": 8,
         "fields": {
             "parent_collection": "Data Visualization",
             "subtitle": "Lorem ipsum",
@@ -81,7 +81,7 @@
     },
     {
         "model": "cms.collection",
-        "pk": "Web Scraping",
+        "pk": 9,
         "fields": {
             "parent_collection": "Data Gathering",
             "subtitle": "Lorem ipsum",
