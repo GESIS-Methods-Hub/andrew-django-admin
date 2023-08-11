@@ -58,7 +58,7 @@ def get_all_content(request):
     if request.META["HTTP_ACCEPT"] == "text/csv":
         return ContentListView.as_view()(request)
 
-    content = list(Content.objects.values("git_repository", "collection__title"))
+    content = list(Content.objects.filter(enable=True).values("git_repository", "filename"))
     return JsonResponse(content, safe=False)
 
 
