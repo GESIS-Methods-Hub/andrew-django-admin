@@ -9,12 +9,12 @@ from rest_framework import permissions
 
 from .forms import ContentForm
 from .models import Content, Collection
-from .serializers import ContentSerializer, CollectionSerializer
+from .serializers import ContentWithAuthorSerializer, CollectionSerializer
 
 
 class ContentViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Content.objects.filter(enable=True)
-    serializer_class = ContentSerializer
+    serializer_class = ContentWithAuthorSerializer
     permission_classes = [permissions.AllowAny]
 
 
