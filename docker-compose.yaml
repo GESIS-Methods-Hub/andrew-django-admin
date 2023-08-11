@@ -5,8 +5,7 @@ services:
     depends_on:
       - postgresql
     build:
-      target: prod
-    command: python3 manage.py runserver 0.0.0.0:8080
+      target: dev
     environment:
       PYTHONUNBUFFERED: 1
       ANDREW_HOST_NAME: localhost
