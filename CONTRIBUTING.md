@@ -35,7 +35,7 @@ docker compose exec django python3 manage.py makemigrations
 ```{bash}
 docker compose exec django python3 manage.py dumpdata \
     --exclude admin \
-    --exclude auth \
+    --exclude auth.permission \
     --exclude contenttypes \
     --exclude sessions \
     | python3 -m json.tool > demo/db.json
