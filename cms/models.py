@@ -22,7 +22,7 @@ class Collection(models.Model):
     def __str__(self):
         if self.parent_collection is None:
             return self.title
-        
+
         return f"{self.parent_collection.__str__()}/{self.title}"
 
     def get_absolute_url(self):
