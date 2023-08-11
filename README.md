@@ -18,6 +18,13 @@ docker compose up
 
 and your development environment should be ready. This repository is bind mounted into the container, database migrations are executed, and the Django server is started. Read the log in the terminal for more details.
 
+The credentials for the admin interface is
+
+```
+User: admin
+Password: 123456
+```
+
 A collection of how-to is included in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Production
