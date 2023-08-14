@@ -24,6 +24,13 @@ With the development environment running, in another terminal, execute
 docker compose exec django python3 manage.py loaddata demo/db.json
 ```
 
+The credentials for the admin interface is
+
+```
+User: admin
+Password: 123456
+```
+
 ### How to create create a new migration after change the database model?
 
 ```{bash}
