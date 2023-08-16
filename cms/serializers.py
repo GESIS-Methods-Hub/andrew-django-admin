@@ -27,6 +27,7 @@ class CollectionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Collection
         fields = [
+            "id",  # Required to resolve parent_collection
             "parent_collection",
             "title",
             "subtitle",
