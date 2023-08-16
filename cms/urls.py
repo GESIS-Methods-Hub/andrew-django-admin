@@ -5,6 +5,7 @@ from . import views
 
 router = routers.DefaultRouter()
 router.register("collection", views.CollectionViewSet)
+router.register("content", views.ContentViewSet)
 
 urlpatterns = [
     path("", views.add_content, name="add_content"),
