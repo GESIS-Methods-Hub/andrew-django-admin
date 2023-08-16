@@ -61,8 +61,13 @@ spec:
                   key: db
           volumeMounts:
             - mountPath: "/var/andrew-django-admin/static"
-              name: {{ .Chart.Name }}-pv-storage
+              name: {{ .Chart.Name }}-pv-storage-static
+            - mountPath: "/var/andrew-django-admin/media"
+              name: {{ .Chart.Name }}-pv-storage-media
       volumes:
-        - name: {{ .Chart.Name }}-pv-storage
+        - name: {{ .Chart.Name }}-pv-storage-static
           persistentVolumeClaim:
-            claimName: {{ .Chart.Name }}-pv-claim
+            claimName: {{ .Chart.Name }}-pv-claim-static
+        - name: {{ .Chart.Name }}-pv-storage-media
+          persistentVolumeClaim:
+            claimName: {{ .Chart.Name }}-pv-claim-media
