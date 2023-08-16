@@ -5,4 +5,4 @@ from .models import Content
 class ContentForm(ModelForm):
     class Meta:
         model = Content
-        fields = ["git_repository", "filename", "collection", "group"]
+        fields = ["web_address", "filename", "collection", "group"]

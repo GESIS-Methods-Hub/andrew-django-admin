@@ -12,12 +12,12 @@ class OnlyEnabledFilteredListSerializer(serializers.ListSerializer):
 class ContentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Content
-        fields = ["git_repository", "filename"]
+        fields = ["web_address", "filename"]
 
 class OnlyEnabledContentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Content
-        fields = ["git_repository", "filename"]
+        fields = ["web_address", "filename"]
         list_serializer_class = OnlyEnabledFilteredListSerializer
 
 

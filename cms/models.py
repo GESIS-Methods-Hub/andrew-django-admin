@@ -30,7 +30,7 @@ class Collection(models.Model):
 
 
 class Content(models.Model):
-    git_repository = models.CharField(max_length=200, verbose_name="Git repository")
+    web_address = models.CharField(max_length=200, verbose_name="Web address")
     filename = models.CharField(max_length=50, verbose_name="File name")
     collection = models.ManyToManyField(Collection, verbose_name="Collection")
 
@@ -47,13 +47,13 @@ class Content(models.Model):
     enable = models.BooleanField(default=True, verbose_name="Enable")
 
     def __str__(self):
-        return f"{self.git_repository} + {self.filename}"
+        return f"{self.web_address} + {self.filename}"
 
     def get_absolute_url(self):
         return reverse("show_content", kwargs={"pk": self.pk})
 
     class Meta:
         unique_together = (
-            "git_repository",
+            "web_address",
             "filename",
         )
