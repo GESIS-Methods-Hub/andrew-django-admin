@@ -4,19 +4,18 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('cms', '0001_initial'),
+        ("cms", "0001_initial"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='content',
-            old_name='git_repository',
-            new_name='web_address',
+            model_name="content",
+            old_name="git_repository",
+            new_name="web_address",
         ),
         migrations.AlterUniqueTogether(
-            name='content',
-            unique_together={('web_address', 'filename')},
+            name="content",
+            unique_together={("web_address", "filename")},
         ),
     ]
