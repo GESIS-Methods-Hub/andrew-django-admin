@@ -1,4 +1,5 @@
 debug: true
 host: "*"
 log_level: "WARNING"
-host_static_files_dir: "/var/www/"
+host_static_files_dir: "/var/www/andrew-django-admin/static"
+host_media_files_dir: "/var/www/andrew-django-admin/media"
