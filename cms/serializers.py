@@ -4,15 +4,16 @@ from .models import Content, Collection
 
 
 class OnlyEnabledFilteredListSerializer(serializers.ListSerializer):
-
     def to_representation(self, data):
         data = data.filter(enable=True)
         return super(OnlyEnabledFilteredListSerializer, self).to_representation(data)
+
 
 class ContentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Content
         fields = ["web_address", "filename"]
+
 
 class OnlyEnabledContentSerializer(serializers.ModelSerializer):
     class Meta:
