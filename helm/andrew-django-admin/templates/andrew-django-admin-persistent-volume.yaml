@@ -4,6 +4,7 @@ metadata:
   name: {{ .Chart.Name }}-pv-volume-static
   labels:
     type: local
+    content: static
 spec:
   storageClassName: manual
   capacity:
@@ -24,6 +25,10 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  selector: 
+    matchLabels: 
+      type: local
+      content: static
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -31,6 +36,7 @@ metadata:
   name: {{ .Chart.Name }}-pv-volume-media
   labels:
     type: local
+    content: media
 spec:
   storageClassName: manual
   capacity:
@@ -51,3 +57,7 @@ spec:
   resources:
     requests:
       storage: 1Gi
+  selector: 
+    matchLabels: 
+      type: local
+      content: media
