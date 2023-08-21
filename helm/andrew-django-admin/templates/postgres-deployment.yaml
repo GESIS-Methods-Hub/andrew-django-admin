@@ -4,6 +4,10 @@ metadata:
   name: {{ .Chart.Name }}-postgres
   labels:
     app: {{ .Chart.Name }}-postgres
+  annotations:
+    prometheus.io/scrape: {{ .Values.prometheus_scrape | quote }}
+    prometheus.io/path: {{ .Values.prometheus_path | quote }}
+    prometheus.io/port: {{ .Values.prometheus_port | quote }}
 spec:
   replicas: 1
   selector:

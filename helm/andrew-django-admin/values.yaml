@@ -3,3 +3,7 @@ host: "*"
 log_level: "WARNING"
 host_static_files_dir: "/var/www/andrew-django-admin/static"
 host_media_files_dir: "/var/www/andrew-django-admin/media"
+
+prometheus_scrape: true
+prometheus_path: "/metrics"
+prometheus_port: 30001
