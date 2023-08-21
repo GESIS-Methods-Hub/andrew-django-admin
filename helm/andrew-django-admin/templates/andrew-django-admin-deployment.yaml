@@ -4,7 +4,10 @@ metadata:
   name: {{ .Chart.Name }}
   labels:
     app: {{ .Chart.Name }}
-spec:
+  annotations:
+    prometheus.io/scrape: {{ .Values.prometheus_scrape | quote }}
+    prometheus.io/path: {{ .Values.prometheus_path | quote }}
+    prometheus.io/port: {{ .Values.prometheus_port | quote }}
   replicas: 1
   selector:
     matchLabels:
