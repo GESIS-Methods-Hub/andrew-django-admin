@@ -19,7 +19,7 @@ def diseble_content(modeladmin, request, queryset):
 
 @admin.register(Content)
 class ContentAdmin(admin.ModelAdmin):
-    list_display = ("web_address", "filename")
-    list_filter = ("collection", )
+    list_display = ("web_address", "filename", "enable")
+    list_filter = ("enable", "collection", )
 
     actions = (enable_content, diseble_content)
